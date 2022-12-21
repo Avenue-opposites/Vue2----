@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习指令和生命周期</title>
+</head>
+<body>
+    <div id="app">
+        text{{message}}
+        <h1 class="box" v-if="true" v-show="true">你好,{{message}}!</h1>
+        <input type="text" v-model="message">
+        <ul class="list">
+            <li v-if="false">A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>{{message}}</li>
+        </ul>
+    </div>
+</body>
+    <script>
+    //    console.log(Vue);
+    </script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mustache模板引擎</title>
+    <script src="../mustache.js"></script>
+  </head>
+  <body></body>
+  <script type="text/template" id="template">
+    <ul class="list">
+        {{#persons}}
+        <li>
+            <p>姓名:{{name}}</p>
+            <p>年龄:{{age}}</p>
+            <p>性别:{{sex}}</p>
+            <p>
+                爱好:
+                {{#hobby}}
+                    <ol>{{.}}</ol>
+                {{/hobby}}
+            </p>
+        </li>
+        {{/persons}}
+    </ul>
+  </script>
+  <script>
+    const data = {
+      persons: [
+        { name: "小明", age: 18, sex: "男",hobby:["编程","吃美食"] },
+        { name: "小红", age: 12, sex: "女" ,hobby:["化妆"]},
+        { name: "小强", age: 20, sex: "男" ,hobby:["打篮球","打羽毛球","打台球"]},
+      ],
+    };
+    let template = document.getElementById("template").innerHTML;
+    let domStr = mustache.render(template,data);
+    document.body.innerHTML = domStr;
+    console.log(domStr);
+  </script>
+</html>

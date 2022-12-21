@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组join方法</title>
+</head>
+<body>
+    <ul class="list">
+       
+    </ul>
+</body>
+<script>
+    const arr = [
+      { name: "小明", age: 18, sex: "男" },
+      { name: "小红", age: 12, sex: "女" },
+      { name: "小强", age: 20, sex: "男" },
+    ];
+    function joinDom(el,domList) {
+        const list = document.querySelector(el);
+        for (let index = 0; index < domList.length; index++) {
+           let str = [
+                '<p>'+domList[index].name+'</p>',
+                '<p>'+domList[index].age+'</p>',
+                '<p>'+domList[index].sex+'</p>',
+           ].join("");
+            let li = document.createElement("li");
+            li.innerHTML = str;
+            list.appendChild(li);
+        }
+    };
+    joinDom(".list",arr);
+</script>
+</html>
